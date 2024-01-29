@@ -71,6 +71,10 @@ def sistema():
 # Função que solicita ao usuário qual o tipo de operação fazer
 def menu_principal():
     menu = input('''
+===========================================
+=               EASY MONEY                =
+=             MENU PRINCIPAL              =
+===========================================
 ======= Escolha a operação desejada =======
 
   [1] Cadastrar | [2] Consulta
@@ -331,7 +335,7 @@ def solicitar_valor():
 # Função que retorna a impressão da seleção dos dados
 def imprimir_selecao(selecao):
     titulo_data = selecao[0][2] + '-' + selecao[0][3] + '-' + selecao[0][4]
-    print(f('\n\n{selecao[0][0]:^5} {selecao[0][1]:^15} {titulo_data:^12} {selecao[0][5]:>15} {selecao[0][6]:>15}').uu)
+    print((f'\n\n{selecao[0][0]:^5} {selecao[0][1]:^15} {titulo_data:^12} {selecao[0][5]:>15} {selecao[0][6]:>15}').upper())
     for item in selecao[1:]:
         if item[1] == 'Investimento':
             data = item[2] + '-' + item[3] + '-' + item[4]
