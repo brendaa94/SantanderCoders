@@ -14,8 +14,13 @@ O sistema deverá ser capaz de realizar as seguintes operações:
 - Deem um nome criativo para a aplicação de vocês
 
 # Projeto Final - Sistema de Controle Financeiro
+
+## Popular Registro
 """
 
+pip install Faker
+
+from faker import Faker
 from datetime import datetime, timedelta
 import csv
 import json
@@ -24,8 +29,6 @@ registros = [['id', 'Operação', 'Dia', 'Mês', 'Ano', 'Valor', 'Montante']]
 id_counter = 0
 
 # Popular Registros
-from faker import Faker
-
 for elemento in range(25):
     id_counter += 1
     fake = Faker()
@@ -36,6 +39,12 @@ for elemento in range(25):
       valor = -abs(valor)
     novo_registro = [id_counter, operacao, data.strftime('%d'), data.strftime('%m'), data.strftime('%Y'), valor, 0.0]
     registros.append(novo_registro)
+
+#Verificando a base de dados
+for i in registros:
+  print(i)
+
+"""##Menu Inicial"""
 
 #Função que inicializa o algoritimo
 def sistema():
@@ -333,7 +342,7 @@ def imprimir_selecao(selecao):
             print(f'{item[0]:^5} {item[1]:^15} {data:^12} {float(item[5]):>15.2f}')
     continuar_consulta()
 
-"""## **Atualizar** registros: (Em Produção)  
+"""## **Atualizar** registros:
 No caso de atualização, pode-se atualizar o valor, o tipo e a data deverá ser a de atualização do registro.
 """
 
@@ -439,7 +448,7 @@ def atualizar_montante():
     return registros
 
 # Função que executa a atualização do montante no lançamento
-def atualizar_rendimento(lancamento, taxa):
+def atualizar_rendimento(lancamento):
     data_atual = datetime.now().strftime('%d-%m-%Y')
     data_cadastro = montar_data(lancamento)
     periodo = abs(datetime.strptime(data_atual, "%d-%m-%Y") - datetime.strptime(data_cadastro, "%d-%m-%Y"))
@@ -575,4 +584,3 @@ def menu_agrupamento():
 """# Teste de Mesa"""
 
 sistema()
-
