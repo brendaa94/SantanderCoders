@@ -72,7 +72,7 @@ def sistema():
 def menu_principal():
     menu = input('''
 ===========================================
-=               EASY MONEY                =
+=               SONEGA PY                 =
 =             MENU PRINCIPAL              =
 ===========================================
 ======= Escolha a operação desejada =======
